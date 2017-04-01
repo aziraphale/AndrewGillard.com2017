@@ -1,0 +1,24 @@
+<article>
+    <h2>Image List - <?php echo $this->escape($this->album->name) ?></h2>
+    <p><a href="<?php echo $this->url(array('controller'=>'gallery', 'action'=>'index'), 'default', true)?>">« Back</a></p>
+    <?php if ($this->album): ?>
+        <?php if ($this->images): ?>
+            <p class="gallery_imglist">
+                <?php foreach ($this->images as $image): ?>
+                    <div class="albumimg">
+                        <a href="<?php echo $this->url(array('controller'=>'gallery', 'action'=>'view', 'id'=>$this->album->id, 'atitle'=>$this->album->name, 'image'=>$image->id, 'ititle'=>$image->caption), 'galleryimage', true) ?>">
+                            <img src="<?php echo $this->baseUrl() ?>/img/gallery/<?php echo $this->escape($this->album->dirName) ?>/<?php echo $this->escape($image->filename) ?>.thumb" width="<?php echo $image->tWidth ?>" height="<?php echo $image->tHeight ?>" alt="<?php echo $this->escape($image->caption) ?>" title="<?php echo $this->escape($image->caption) ?>" />
+                            <br>
+                            <span class="albumimgcaption"><?php echo $this->escape($image->caption) ?></span>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </p>
+        <?php else: ?>
+            <p>No images to display from this album.</p>
+        <?php endif; ?>
+        <p><a href="<?php echo $this->url(array('controller'=>'gallery', 'action'=>'index'), 'default', true)?>">« Back</a></p>
+    <?php else: ?>
+        <p>Invalid album.</p>
+    <?php endif;?>
+</article>
