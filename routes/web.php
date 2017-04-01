@@ -30,7 +30,7 @@ Route::get('/discworld/maps', 'DiscworldController@maps');
 Route::get('/discworld/rods', 'DiscworldController@rods');
 Route::get('/discworld/status-bar-script', 'DiscworldController@sbscript');
 
-Route::get('/gallery', 'GalleryController@index');
+//Route::get('/gallery', 'GalleryController@index');
 Route::get('/web2messenger', 'Web2messengerController@index');
 
 /*

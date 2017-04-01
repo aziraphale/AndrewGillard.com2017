@@ -9,9 +9,18 @@
 
         <title>@yield('title') - Andrew's Stuff</title>
 
-        <link rel="alternate" href="{{action('BlogController@rss')}}" type="application/rss+xml" title="Andrew's Stuff - News">
+        <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/css/jquery-ui-1.8.18.redmond.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/css/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/mobile.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" media="all" rel="stylesheet" type="text/css">
+
+        <link rel="alternate" href="{{--action('BlogController@rss')--}}" type="application/rss+xml" title="Andrew's Stuff - News">
         <link rel="icon" href="{{asset('img/favicon.ico')}}">
 
+        <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.8.18.min.js"></script>
+        <script type="text/javascript" src="/js/misc.js"></script>
         @stack('scripts')
         <script>
         var _prum = [['id', '52b7dfbbabe53d2772000000'],
@@ -27,10 +36,10 @@
     </head>
     <body>
         <header>
-            <h1><a href="{{action('BlogController@index')}}">Andrew's Stuff</a></h1>
+            <h1><a href="{{--action('BlogController@index')--}}">Andrew's Stuff</a></h1>
 
             <nav>
-                {{--echo $this->navigation()->menu();--}}
+                @include('layout.components.navigation')
             </nav>
         </header>
 
@@ -55,7 +64,7 @@
                 <li><a href="http://validator.w3.org/check?uri={{url()->full()}}" title="Valid HTML5!" class="sprite-footer-html5"></a></li>
                 <li><a href="http://www.php.net/" title="Powered by PHP" class="sprite-footer-php"></a></li>
                 <li><a href="http://www.mysql.com/" title="Powered by MySQL" class=sprite-footer-mysql></a></li>
-                <li><a href="{{action('BlogController@rss')}}" title="RSS Feed" class="sprite-footer-rss"></a></li>
+                <li><a href="{{--action('BlogController@rss')--}}" title="RSS Feed" class="sprite-footer-rss"></a></li>
             </ul>
         </footer>
 
