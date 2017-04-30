@@ -1,31 +1,37 @@
-<?php echo $this->paginator->render() ?>
+@extends('layout.master')
 
-<?php foreach ($this->paginator as $entry) : ?>
+@section('content')
+
+{{$posts->links()}}
+
+@foreach ($posts as $post)
     <article class="blogpost">
 	    <h2>
-		    <a href="<?php echo $this->url(array('controller'=>'blog', 'action'=>'view', 'id'=>$entry->id, 'title'=>$entry->title), 'blogpost', true) ?>">
-			    <?php echo $this->escape($entry->title) ?>
+		    <a href="{{action('BlogController@view', ['id'=>$post->id, 'slug'=>$post->slug])}}">
+			    {{$post->title}}
 		    </a>
 	    </h2>
         <h3 class="blogsubheading">
-            <span class="postdate"><span class="postdatetitle">Posted at</span> <?php echo $entry->date->toString("EEE, d MMM yyyy, HH:mm:ss") ?></span>
-            <span class="commentslink"><a href="<?php echo $this->url(array('controller'=>'blog', 'action'=>'view', 'id'=>$entry->id, 'title'=>$entry->title), 'blogpost', true) ?>#disqus_thread" data-disqus-identifier="<?php echo $entry->id ?>">Comments</a></span>
+            <span class="postdate"><span class="postdatetitle">Posted at</span> {{$post->publication_date->format("D, j M Y H:i:s")}}</span>
+            <span class="commentslink"><a href="{{action('BlogController@view', ['id'=>$post->id, 'slug'=>$post->slug])}}#disqus_thread" data-disqus-identifier="{{$post->id}}">Comments</a></span>
         </h3>
         <div class="blogpostcontent">
-            <?php if ($entry->isHtml): ?>
-                <?php echo $entry->shortBody() ?>
-            <?php else: ?>
-	            <div><?php echo $this->bbcode->render($entry->shortBody()) ?></div>
-            <?php endif; ?>
-            <p class="readmorelink"><a href="<?php echo $this->url(array('controller'=>'blog', 'action'=>'view', 'id'=>$entry->id, 'title'=>$entry->title), 'blogpost', true) ?>">Read more...</a></p>
+            @if ($post->isHtml())
+                {!! $post->shortBody() !!}
+            @elseif ($post->isMarkdown())
+
+            @else
+	            <div>{!! BBCode::parse($post->shortBody()) !!}</div>
+            @endif
+            <p class="readmorelink"><a href="{{action('BlogController@view', ['id'=>$post->id, 'slug'=>$post->slug])}}">Read more...</a></p>
         </div>
     </article>
-<?php endforeach; ?>
+@endforeach
 
 <script type="text/javascript">
-<?php if (APPLICATION_ENV != 'production'): ?>
-var disqus_developer = 1;
-<?php endif; ?>
+@if (env('APP_ENV') !== 'production')
+    var disqus_developer = 1;
+@endif
 var disqus_shortname = 'andrewgillard';
 (function () {
     var s = document.createElement('script'); s.async = true;
@@ -35,4 +41,6 @@ var disqus_shortname = 'andrewgillard';
 }());
 </script>
 
-<?php echo $this->paginator->render() ?>
+{{$posts->links()}}
+
+@endsection

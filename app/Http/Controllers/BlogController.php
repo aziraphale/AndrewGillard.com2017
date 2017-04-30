@@ -2,56 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\BlogPost;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    //
+    public function index(Request $request)
+    {
+        $posts = BlogPost::where('draft', 0)->orderBy('publication_date', 'desc')->paginate(5);
+        return view('blog.index', ['posts'=>$posts]);
+    }
+
+    public function view(Request $request, $id, $slug = '')
+    {
+        $post = BlogPost::where('draft', 0)->find($id)->first();
+        return view('blog.view', ['post'=>$post]);
+    }
+
+    public function rss()
+    {
+        $posts = BlogPost::where('draft', 0)->orderBy('publication_date', 'desc')->paginate(10);
+        return view('blog.rss', ['posts'=>$posts]);
+    }
 }
-
-/*
- class BlogController extends Zend_Controller_Action
- {
-     private $blogModel = null;
-
-     public function init()
-     {
-         $this->blogModel = new Model_Blog();
-         $this->view->bbcode = Zend_Markup::factory("Bbcode");
-
-         $this->_helper->cache(array('index'), array('blog_indexaction'));
-         $this->_helper->cache(array('view'), array('blog_viewaction'));
-         $this->_helper->cache(array('rss'), array('blog_rssaction'));
-     }
-
-     public function indexAction()
-     {
-         $this->view->paginator = Zend_Paginator::factory(
-                 $this->blogModel->select()
-                             ->where("visible=1")
-                             ->order('date DESC')
-             )
-             ->setItemCountPerPage(5)
-             ->setCurrentPageNumber($this->_getParam('page', 1));
-     }
-
-     public function viewAction()
-     {
-     	$this->view->entry = $this->blogModel->getEntry($this->_getParam("id", 0));
-
-         Zend_Registry::set("extrabreadcrumbs", Zend_Registry::get("extrabreadcrumbs") + array(array($this->view->entry->title)));
-     }
-
-     public function rssAction()
-     {
-         header("Content-type: text/xml");
-         $this->view->paginator = Zend_Paginator::factory(
-                 $this->blogModel->select()
-                             ->where("visible=1")
-                             ->order('date DESC')
-             )
-             ->setItemCountPerPage(5)
-             ->setCurrentPageNumber(1);
-     }
- }
- */

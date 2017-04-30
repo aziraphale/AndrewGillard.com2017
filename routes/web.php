@@ -11,8 +11,10 @@
 |
 */
 
-//Route::get('/', 'BlogController@index');
-Route::get('/', 'AboutController@index');
+Route::get('/', 'BlogController@index');
+Route::get('/blog', 'BlogController@index');
+Route::get('/blog/{id}/{slug?}', 'BlogController@view');
+//Route::get('/', 'AboutController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/cv', 'CvController@index');
 Route::get('/portfolio', 'PortfolioController@index');
