@@ -24,9 +24,11 @@ Route::get('/discworld/deaths', 'DiscworldController@deaths');
 Route::get('/discworld/gruntha-deaths', 'DiscworldController@grunthadeaths');
 Route::get('/discworld/information', 'DiscworldController@info');
 Route::get('/discworld/language-graphs', 'DiscworldController@langgraphs');
+Route::post('/discworld/language-graphs', 'DiscworldController@langgraphs');
+Route::get('/discworld/render-language-graph', 'DiscworldController@renderlanggraph');
 Route::get('/discworld/locations', 'DiscworldController@locations');
 Route::get('/discworld/logs', 'DiscworldController@logs');
-Route::get('/discworld/maps', 'DiscworldController@maps');
+Route::get('/discworld/maps/{map?}', 'DiscworldController@maps');
 Route::get('/discworld/rods', 'DiscworldController@rods');
 Route::get('/discworld/status-bar-script', 'DiscworldController@sbscript');
 

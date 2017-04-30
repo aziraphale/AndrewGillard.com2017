@@ -1,3 +1,6 @@
+@extends('layout.master')
+
+@section('content')
 <article class="dwsbscript">
     <p>This is the script that I use in MUSHclient to give me a status bar at the bottom of the window displaying my current HP, GP and XP.</p>
 
@@ -5,8 +8,8 @@
 
     <p>
         It looks something like this:<br>
-        <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/status_bar.png">
-            <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/status_bar.png" alt="Status Bar">
+        <a href="{{asset('/img/dw/sb_script/status_bar.png')}}">
+            <img src="{{asset('/img/dw/sb_script/status_bar.png')}}" alt="Status Bar">
         </a>
     </p>
 
@@ -20,18 +23,18 @@
     <p><strong>Installation:</strong></p>
     <ul>
         <li>(I will be assuming in the below instructions that you do not already have a MUSHclient script installed. If you do, you will need to merge them, and that is up to you.)</li>
-        <li>Firstly you will need <a href="<?php echo $this->baseUrl() ?>/files/dw_statusbar.zip">this .js file</a>.</li>
+        <li>Firstly you will need <a href="{{asset('/files/dw_statusbar.zip')}}">this .js file</a>.</li>
         <li>Extract the .js file from the .zip somewhere (the location does not matter, but remember it as you will need it later).</li>
         <li>
             Open the world properties dialog in MUSHclient and select the Scripts section.  In there, set the "Script File" text box to be the path to the .js file you just extracted, and ensure that "JScript" is selected as the Scripting Language.<br>
-            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/scripts.png">
-                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/scripts.png" alt="Scripts section">
+            <a href="{{asset('/img/dw/sb_script/scripts.png')}}">
+                <img src="{{asset('/img/dw/sb_script/scripts.png')}}" alt="Scripts section">
             </a>
         </li>
         <li>
             Next select the Triggers section of preferences.  You will need to create three new triggers:<br>
-            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/triggers_list.png">
-                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/triggers_list.png" alt="Triggers">
+            <a href="{{asset('/img/dw/sb_script/triggers_list.png')}}">
+                <img src="{{asset('/img/dw/sb_script/triggers_list.png')}}" alt="Triggers">
             </a>
             <ul>
                 <li>
@@ -41,8 +44,8 @@
                         <li><b>Regular Expression:</b> Yes</li>
                         <li><b>Script:</b> <code>handleScoreLineOne</code></li>
                         <li>
-                            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/trigger1.png">
-                                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/trigger1.png" alt="Trigger #1">
+                            <a href="{{asset('/img/dw/sb_script/trigger1.png')}}">
+                                <img src="{{asset('/img/dw/sb_script/trigger1.png')}}" alt="Trigger #1">
                             </a>
                         </li>
                     </ul>
@@ -54,8 +57,8 @@
                         <li><b>Regular Expression:</b> Yes</li>
                         <li><b>Script:</b> <code>handleScoreLineTwo</code></li>
                         <li>
-                            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/trigger2.png">
-                                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/trigger2.png" alt="Trigger #2">
+                            <a href="{{asset('/img/dw/sb_script/trigger2.png')}}">
+                                <img src="{{asset('/img/dw/sb_script/trigger2.png')}}" alt="Trigger #2">
                             </a>
                         </li>
                     </ul>
@@ -67,8 +70,8 @@
                         <li><b>Regular Expression:</b> Yes</li>
                         <li><b>Script:</b> <code>handleSBOrMonitor</code></li>
                         <li>
-                            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/trigger3.png">
-                                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/trigger3.png" alt="Trigger #3">
+                            <a href="{{asset('/img/dw/sb_script/trigger3.png')}}">
+                                <img src="{{asset('/img/dw/sb_script/trigger3.png')}}" alt="Trigger #3">
                             </a>
                         </li>
                     </ul>
@@ -78,8 +81,8 @@
         </li>
         <li>
             Then select the Timers section.  You will need to create two new timers:<br>
-            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/timers.png">
-                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/timers.png" alt="Timers">
+            <a href="{{asset('/img/dw/sb_script/timers.png')}}">
+                <img src="{{asset('/img/dw/sb_script/timers.png')}}" alt="Timers">
             </a>
             <ul>
                 <li>
@@ -88,8 +91,8 @@
                         <li><b>Label:</b> <code>handleMXPEntityChanges</code></li>
                         <li><b>Script:</b> <code>handleMXPEntityChanges</code></li>
                         <li>
-                            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/timer1.png">
-                                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/timer1.png" alt="Timer #1">
+                            <a href="{{asset('/img/dw/sb_script/timer1.png')}}">
+                                <img src="{{asset('/img/dw/sb_script/timer1.png')}}" alt="Timer #1">
                             </a>
                         </li>
                     </ul>
@@ -100,8 +103,8 @@
                         <li><b>Label:</b> incrementGPHPOnHB</li>
                         <li><b>Script:</b> incrementGPHPOnHB</li>
                         <li>
-                            <a href="<?php echo $this->baseUrl() ?>/img/dw/sb_script/timer2.png">
-                                <img src="<?php echo $this->baseUrl() ?>/img/dw/sb_script/timer2.png" alt="Timer #2">
+                            <a href="{{asset('/img/dw/sb_script/timer2.png')}}">
+                                <img src="{{asset('/img/dw/sb_script/timer2.png')}}" alt="Timer #2">
                             </a>
                         </li>
                     </ul>
@@ -169,5 +172,4 @@
 
     <p>Also, major fluffs to Wodan for adding the MaxGP and MaxHP MXP entities recently.  The data has existed inside the entities as an attribute for some time, but MUSHclient wasn't able to extract it - the new entities have fixed that little problem.</p>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection

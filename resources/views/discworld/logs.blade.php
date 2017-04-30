@@ -1,19 +1,22 @@
-<article>
-<p class="dwquote"><a id="log1" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@extends('layout.master')
+
+@section('content')
+    <article>
+    <p class="dwquote"><a id="log1" class="docanchor"></a>
+        @obstart('dwq')
 It seems easier to perform holy sacrifice because you are near holy ground.
 You raise your arms towards the heavens, dagger in hand.
 
 <span class="dwq_discon">&lt;&lt;Session Disconnected: 9:40 pm&gt;&gt;</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Starting to perform Holy Sacrifice immediately before being disconnected. Luckily this was a crash and not a simple disconnection, or I may have been logging back on to see Death.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Starting to perform Holy Sacrifice immediately before being disconnected. Luckily this was a crash and not a simple disconnection, or I may have been logging back on to see Death.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log2" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log2" class="docanchor"></a>
+        @obstart('dwq')
 You enter the flame, feeling perfectly at one with Sek for a moment before you suddenly find yourself elsewhere.
 The centre of the Royal Market <span class="dwq_green">[n,s,e,w]</span>.
 A hairy bum and a pie seller are standing here.
@@ -48,15 +51,15 @@ You no longer feel shocked and confused.
 The suspicious character gets 11 Djelian talents, 10 Lancre shillings, 6 Ankh-Morpork pence, one Ankh-Morpork royal, some Ankh-Morpork dollars, 9 Lancre crowns, one Lancre farthing, 8 Ankh-Morpork ten-dollars, 5 Agatean Empire rhinu, 2 Ankh-Morpork ten-pences, 5 Genuan livres and some Genuan cents from the corpse of Mishal d'Ranged.
 Someone says: MY, WE'VE BEEN A BIT CARELESS, HAVEN'T WE?  SHALL WE POPPADOM TO THE NEXT DIMENSION?
 You turn and see Death standing behind you.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Passaging into Sto Lat before being positively wrecked by some random NPC. Mishal's first death, too. I especially like the way that after killing me the NPC proceeded to steal three royals' worth of stuff from my corpse (which included my watch).</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Passaging into Sto Lat before being positively wrecked by some random NPC. Mishal's first death, too. I especially like the way that after killing me the NPC proceeded to steal three royals' worth of stuff from my corpse (which included my watch).</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log3" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log3" class="docanchor"></a>
+        @obstart('dwq')
 You are having trouble performing resurrect because you are using the white cane as an external focus for the ritual.  However, this is mitigated by the fact that you are near holy ground.
 You kneel in prayer.
 You close your eyes, and contemplate higher things.
@@ -70,15 +73,15 @@ Death tells you: HMM... HE DOESN'T SEEM TO BE A REGULAR CLIENT OF MINE.  I SUPPO
 Death's image vanishes.
 Illuminate starts to glow softly.
 Illuminate appears in more solid form.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Mishal's first resurrect. Resurrect rods are the best.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Mishal's first resurrect. Resurrect rods are the best.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log4" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log4" class="docanchor"></a>
+        @obstart('dwq')
 Someone says: MY, WE'VE BEEN A BIT CARELESS, HAVEN'T WE?
 You turn and see Death standing behind you.
 Death says: I SUPPOSE YOU WANT TO BE ALLOWED TO STAY, DO YOU?
@@ -86,15 +89,15 @@ Death says: OH, BUGGER, THERE'S A TYPO IN THE DEATH LOG.
 Death gets a sandtimer from within the dark cloak and looks at it.
 Death says: MIND YOU, IT WON'T BE LONG.  I'LL SEE YOU LATER.
 Death disappears in a puff of nothing.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">A random room chat in Bes Pelargic's Red Triangle District.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">A random room chat in Bes Pelargic's Red Triangle District.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log5" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log5" class="docanchor"></a>
+        @obstart('dwq')
 The Tuna Walk commercial area <span class="dwq_green">[e,w]</span>.
 A starving urchin is standing here and a rickshaw driver is pulling the rickshaw along.
 An enamelled sign is on the building and a rickshaw is here being pulled by the rickshaw driver.
@@ -116,15 +119,15 @@ The starving urchin opens the shop door.
 The starving urchin leaves north.
 The starving urchin closes the shop door.
 The door in the north wall flickers, and vanishes.  A few lazy worms of fire remain on the wall in its place, but they quickly wink out.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">That solved <i>that</i> problem... I feel sorry for the poor natives of the Brown Islands, though.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">That solved <i>that</i> problem... I feel sorry for the poor natives of the Brown Islands, though.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log6" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log6" class="docanchor"></a>
+        @obstart('dwq')
 LPmud version : FluffOS v1.36 on port 4242.
 Welcome to Discworld: the stuff of which dreams are made.
 
@@ -185,15 +188,15 @@ Queued command: glance
 The aged zombie mumbles something about brainssss under its breath.
 The aged zombie moves aggressively towards you!
 The aged zombie jabs you in the chest.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Auto-attacked on login. Thankfully it was a fairly weak NPC ("The aged zombie looks pretty nasty.") and I had full GP, otherwise that could have ended quite differently.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Auto-attacked on login. Thankfully it was a fairly weak NPC ("The aged zombie looks pretty nasty.") and I had full GP, otherwise that could have ended quite differently.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log7" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log7" class="docanchor"></a>
+        @obstart('dwq')
 <span class="dwq_boldgreen">(Priests) Spank wisps that he blinks.</span>
 <span class="dwq_boldgreen">(Priests) Spank wisps: Striking TM.</span>
 <span class="dwq_boldgreen">(Priests) Thakh wisps that he mourns.</span>
@@ -226,15 +229,15 @@ You briefly see a vision.
      The corpse of Spank a'Thon is on the ground.
 
 You put the ribboned baton in a pocket in the black backpack.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<?php /* <p class="dwcaption"></p> */ ?>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <?php /* <p class="dwcaption"></p> */ ?>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log8" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log8" class="docanchor"></a>
+        @obstart('dwq')
 <span class="dwq_boldcyan">(Apex) Acantha wisps: Dariana, have you tried playing Gufnork's organ?"
 (Apex) Thakh wisps that he leers.
 (Apex) Syaoran wisps: nope, thats aaaalllll you acantha :)
@@ -260,15 +263,15 @@ You put the ribboned baton in a pocket in the black backpack.
 (Apex) Acantha wisps: Go try, Julnar.
 (Apex) Acantha wisps: Naefela and I played a duet once or twice.
 (Apex) Thakh wisps: I'm sure Acantha could teach you lots.</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<? /* <p class="dwcaption"></p> */ ?>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <? /* <p class="dwcaption"></p> */ ?>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log9" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log9" class="docanchor"></a>
+        @obstart('dwq')
 &gt; <span class="dwq_typed">bp</span>
 Now using Agatean for speaking and writing.
 You remove a gold cobra charm from Obsidian Bracelet.
@@ -296,15 +299,15 @@ A rickshaw is here being pulled by the rickshaw driver and an enamelled sign is 
 Cannot find "flat cap", no match.
 You carefully attach the gold cobra charm to Obsidian Bracelet.
 You hear a faint voice in your head: Mishal!  It's the flat cap.  I'm currently being carried by a roguish thief in near the north end of Short Street.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Yay for wards - paralysis and sotto voce, in this case. I paid A$100 to the person who killed the thief and found my cap, which is somewhat cheaper than spending two to five times that much for a new one. Everyone's a winner.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Yay for wards - paralysis and sotto voce, in this case. I paid A$100 to the person who killed the thief and found my cap, which is somewhat cheaper than spending two to five times that much for a new one. Everyone's a winner.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log10" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log10" class="docanchor"></a>
+        @obstart('dwq')
 &gt; <span class="dwq_typed">find elera</span>
 It seems easier to perform find because you are near holy ground.
 &gt; You utter a quick prayer.
@@ -322,15 +325,15 @@ You whisper into the silver watch pin.
 You sob on someone's shoulder.
 &gt; Your vision has returned.
 <span class="dwq_boldyellow">Elera tells you: hah hah, you're blind :P</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Performing find on creators is Very Bad, apparently :(</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Performing find on creators is Very Bad, apparently :(</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log11" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log11" class="docanchor"></a>
+        @obstart('dwq')
 A road <span class="dwq_green">[n,w,e]</span>.
 An old villager is standing here.
 A small wooden numberplate is on the north wall and a wooden pole with an olive note and a white note attached to it is here.
@@ -379,15 +382,15 @@ You finish learning 44 levels of other.health from Lanfear.
 You thank Lanfear muchly.
 &gt; <span class="dwq_typed">sb</span>
 Hp: 1695(1695)  Gp: 349(349)  Xp: 16738
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Falling off the Ramtops.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Falling off the Ramtops.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log12" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log12" class="docanchor"></a>
+        @obstart('dwq')
 <span class="dwq_boldred">Offler the Crocodile God shouts: Game ith webooting in 7 minuteth.</span>
 <span class="dwq_boldblue">(Two) Sokkard wisps: Hmmm, Offler-goodness.
 (Two) Sokkard wisps: Right! Now what shall I sing? Something from Mellow Yellow Wahooni Fruits, The Hamlet Persons, Newbie King, Lappet Faced Worriers, Enim Rac, Patricienne, Areyem, Mc Mallet, Lynched Liam or Orphans Impovision Workshop?
@@ -426,27 +429,27 @@ Hp: 1695(1695)  Gp: 349(349)  Xp: 16738
 (Two) Sokkard wisps: Ankh-Mor-pork of Whatever!
 (Two) Sokkard wisps: And this is my,
 (Two) Sokkard wisps: Ankh-Mor-pork of Whatever!</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Spammiest NPC on the Disc! (Most unfortunatey I know the original song that Sokkard is parodying)</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Spammiest NPC on the Disc! (Most unfortunatey I know the original song that Sokkard is parodying)</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log13" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log13" class="docanchor"></a>
+        @obstart('dwq')
 Aemi has died for the last time.  But the Smiling Chimera, sw corner of the marketplace in OC, also stocks some very shiny priestly items.
 <span class="dwq_red">(One) Fayte wisps: wow.. way to go to an effort for advertising
 (One) positrix wisps: I was wondering if I'd imagined that...
 (One) Gwydion wisps: All praise the People's Endeavour! :D</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log14" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log14" class="docanchor"></a>
+        @obstart('dwq')
 Blessed Mother Cailleach visits you unexpectedly!
 Blessed Mother Cailleach looks at you.
 Cailleach grins at Nella and you.
@@ -494,15 +497,15 @@ Blessed Mother Cailleach looks at you.
 You comfort Blessed Mother Cailleach.
 > Blessed Mother Cailleach giggles.
 Cailleach waves to Nella and you.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Visit is such a bizarre ritual. And totally not random, apparently.</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Visit is such a bizarre ritual. And totally not random, apparently.</p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log15" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log15" class="docanchor"></a>
+        @obstart('dwq')
  <span class="dwq_red">#</span><span class="dwq_green">e</span><span class="dwq_cyan">~</span>         The land is lit up by the eerie light of the waxing crescent moon.
  <span class="dwq_green">e</span><span class="dwq_red">#</span><span class="dwq_green">e</span>         This is a sizable suspension bridge spanning high over Lancre Gorge, serving
   <span class="dwq_green">e</span><span class="dwq_red">#</span><span class="dwq_cyan">~</span> <span class="dwq_green">f  f</span>  as the gateway into the kingdom of Lancre.  Stone towers stand at either end
@@ -535,14 +538,14 @@ You say: Yes, please.
 <span class="dwq_cyan">The customs troll says to you with a Lancrastian accent: I have eight medium sized black bottles for LC 2|10|8 3/4 each.</span>
 <span class="dwq_cyan">The customs troll says to you with a Lancrastian accent: I have six medium sized brown bottles for LC 1|1|10 3/4 each.</span>
 <span class="dwq_cyan">The customs troll says to you with a Lancrastian accent: I have five badly-rolled cigarettes for Ls 4|2 each.</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log16" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log16" class="docanchor"></a>
+        @obstart('dwq')
 > <span class="dwq_typed">quit</span>
 A small gecko takes your hand and rushes you to the departure lounge.
 > [Mishal leaves Discworld -- Taxi]
@@ -556,14 +559,14 @@ You clamber about a giant spider.  Gumboot starts to walk out the door and stand
 flung from the back of the giant spider out through the door and float meaninglessly through space.  You hope you
 will be seen again...
 Do come again!
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    </article>
 
-<article>
-<p class="dwquote"><a id="log17" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <article>
+    <p class="dwquote"><a id="log17" class="docanchor"></a>
+        @obstart('dwq')
 <span style="color:#C0C0C0;">     </span><span style="color:#008080;">*</span><span style="color:#C0C0C0;">      This is the centre of the market square in Ohulan-Cutash.  There is quite a throng of townspeople here,
    | | </span><span style="color:#800000;">+</span><span style="color:#C0C0C0;">    all trying to get to the stalls to buy various products that are on offer.  The town well attracts all
    </span><span style="color:#008080;">&amp;</span><span style="color:#C0C0C0;">-</span><span style="color:#008080;">*</span><span style="color:#C0C0C0;">-</span><span style="color:#008080;">*</span><span style="color:#800000;">+</span><span style="color:#C0C0C0;">   sorts of people, from wealthy merchants to humble farmwives.  The market sprawls out in all directions.
@@ -598,23 +601,23 @@ Do come again!
                           \            /
                            \          /
                             ==========</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption">Festive...</p>
-</article>
+        @obend
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
+    </p>
+    <p class="dwcaption">Festive...</p>
+    </article>
 
-<?php /*
-Template:
-<article>
-<p class="dwquote"><a id="log0" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
-<span class="dwq_"></span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
-</p>
-<p class="dwcaption"></p>
-</article>
-*/ ?>
+    <?php /*
+    Template:
+    <article>
+    <p class="dwquote"><a id="log0" class="docanchor"></a>
+    <?php $this->placeholder('dwq')->captureStart('SET'); ?>
+    <span class="dwq_"></span>
+    <?php $this->placeholder('dwq')->captureEnd(); ?>
+    <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+    </p>
+    <p class="dwcaption"></p>
+    </article>
+    */ ?>
 
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection

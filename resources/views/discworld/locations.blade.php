@@ -1,3 +1,6 @@
+@extends('layout.master')
+
+@section('content')
 <article>
     <p>Below is a list of all the (114) passage locations Mishal has. As a member of the Taxi club he will be willing to transport you from any one of these locations (or close to one) to any other location on the list.</p>
 
@@ -90,7 +93,7 @@
         <li>Brass Neck</li>
         <li>Creel Springs</li>
         <li>Druid Circle</li>
-        <li>Feegle Island (More information on the <a href="<?php echo $this->url(array('action'=>'maps','map'=>'pictsie-barrows'))?>">Pictsie Barrows map page</a>)</li>
+        <li>Feegle Island (More information on the <a href="{{action('DiscworldController@maps', ['map'=>'pictsie-barrows'])}}">Pictsie Barrows map page</a>)</li>
         <li>Gloomy Forest (West side)</li>
         <li>Hunters' Guild</li>
         <li>Lancre Town</li>
@@ -183,5 +186,4 @@
         <li>Sea Bed</li>
     </ul>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection

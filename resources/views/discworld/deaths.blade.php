@@ -1,10 +1,13 @@
+@extends('layout.master')
+
+@section('content')
 <article>
-    <p>The following is a comprehensive list of Mishal's deaths.</p>
+    <p>The following is a comprehensive list of the deaths of my character (Mishal).</p>
 </article>
 
 <article>
 <p class="dwquote"><a id="death1" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@obstart('dwq')
 You enter the flame, feeling perfectly at one with Sek for a moment before you suddenly find yourself elsewhere.
 The centre of the Royal Market <span class="dwq_green">[n,s,e,w]</span>.
 A hairy bum and a pie seller are standing here.
@@ -39,14 +42,14 @@ You no longer feel shocked and confused.
 The suspicious character gets 11 Djelian talents, 10 Lancre shillings, 6 Ankh-Morpork pence, one Ankh-Morpork royal, some Ankh-Morpork dollars, 9 Lancre crowns, one Lancre farthing, 8 Ankh-Morpork ten-dollars, 5 Agatean Empire rhinu, 2 Ankh-Morpork ten-pences, 5 Genuan livres and some Genuan cents from the corpse of Mishal d'Ranged.
 Someone says: MY, WE'VE BEEN A BIT CARELESS, HAVEN'T WE?  SHALL WE POPPADOM TO THE NEXT DIMENSION?
 You turn and see Death standing behind you.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+@obend
+<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
 </p>
 </article>
 
 <article>
 <p class="dwquote"><a id="death2" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@obstart('dwq')
 A road <span class="dwq_green">[n,w,e]</span>.
 An old villager is standing here.
 A small wooden numberplate is on the north wall and a wooden pole with an olive note and a white note attached to it is here.
@@ -78,14 +81,14 @@ The ground suddenly opens up in front of your feet and a bunch of manically grin
 bouncing around in front of you.
 <span class="dwq_cyan">With a huge smile one of the grinning dwarfs whispers in your ear: Here, take this book - it'll tell you everything you need to know.  But don't mention it to Death.  Ok?</span>
 Without waiting, they all leap back into the hole which slowly closes after them.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+@obend
+<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
 </p>
 </article>
 
 <article>
 <p class="dwquote"><a id="death3" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@obstart('dwq')
 <span class="dwq_typed">t cal Just find a tree to climb and TM!
 </span><span>You exclaim to Cal: Just find a tree to climb and TM!
 </span><span>&gt; <span class="dwq_typed">eggtree</span>
@@ -172,15 +175,15 @@ Without waiting, they all leap back into the hole which slowly closes after them
 </span><span class="dwq_cyan">Death says: JUST DON'T TELL ANYONE I DID THIS FOR YOU!
 </span><span class="dwq_cyan">Death says: ARE YOU STILL HERE FOR ANY PARTICULAR REASON?  I HAVE BEEN KNOWN TO CHANGE MY MIND...
 </span><span class="dwq_cyan">Death gets back onto Binky and rides away.</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+@obend
+<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
 </p>
 <p class="dwcaption">Third death.  This time at the hands of a tree, though I think Rincewind would blame the ground.</p>
 </article>
 
 <article>
 <p class="dwquote"><a id="death4" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@obstart('dwq')
 A Coffee Nostra hitman steps out of the shadows.
 The Coffee Nostra hitman attacks you from behind.  You recall him standing right in front of you just a second ago.
 You feel somewhat confused.
@@ -206,14 +209,14 @@ You turn and see Death standing behind you.
 <span class="dwq_cyan">Death says: IF YOU TALK ABOUT THIS TO ANYONE, WATCH OUT, YOU MAY JUST WAKE UP DEAD.</span>
 <span class="dwq_cyan">Death says: I MAY NOT BE SO FORGIVING IN THE FUTURE.  BE MORE CAREFUL.</span>
 <span class="dwq_cyan">Death gets back onto Binky and rides away.</span>
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+@obend
+<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
 </p>
 </article>
 
 <article>
 <p class="dwquote"><a id="death5" class="docanchor"></a>
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@obstart('dwq')
 You feel a mild twinge in one knee.
 Your joints seem to be getting more inflamed.
 Maybe it's something you're wearing?
@@ -637,9 +640,8 @@ You thank Touchstone and Gillburt.
 You wave to Touchstone and Gillburt.
 Gillburt waves to you.
 The wailing, breathless melody on the bagpipes fades away as Green Gillburt disappears from view.
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+@obend
+<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
 </p>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection

@@ -13,6 +13,9 @@ Blight: 330 of.ta
 Divine Sentinel: 300 de.ta (plus it.sc depending on ritual)
 
 */ ?>
+@extends('layout.master')
+
+@section('content')
 
 <article>
     <h2>Priests Guild Pre-Titles<a id="priests_guild_pre-titles" class="docanchor"></a></h2>
@@ -72,5 +75,4 @@ Divine Sentinel: 300 de.ta (plus it.sc depending on ritual)
         </tbody>
     </table>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection

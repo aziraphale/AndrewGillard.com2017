@@ -1,14 +1,18 @@
-<?php if ($this->skillCode) { ?>
-    <article>
-        <p><img src="<?php echo $this->url(array('action'=>'render-language-graph', 'skills-code'=>$this->skillCode)) ?>" alt="Graph of your Language Skills" /></p>
-    </article>
-<?php } ?>
+@extends('layout.master')
 
-<?php if ($this->parseError) { ?>
+@section('content')
+
+@if ($skillCode)
+    <article>
+        <p><img src="{{action('DiscworldController@renderlanggraph', ['skills-code'=>$skillCode])}}" alt="Graph of your Language Skills" /></p>
+    </article>
+@endif
+
+@if ($parseError)
     <article>
         <p>An error occurred parsing the skills you supplied. Please ensure that they are of a valid format, for example:</p>
         <p class="dwquote">
-            <?php $this->placeholder('dwq')->captureStart('SET'); ?>
+            @obstart('dwq')
 =======SKILLS=======Level/Bonus=========================================
 other...............    -    -          | | | spoken........  100    -
 | language..........    -    -          | | | written.......  100    -
@@ -19,11 +23,11 @@ other...............    -    -          | | | spoken........  100    -
 | | | spoken........   64    -          | | | spoken........   65    -
 | | | written.......   38    -          | | | written.......   18    -
 | | morporkian......    -    -
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-            <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+            @obend()
+            <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
         </p>
     </article>
-<?php } ?>
+@endif
 
 <article>
     <p>This page basically draws a graph of your character's language skills once those skills have been entered. Entering your skills is a case of copying the output of the MUD command "skills ot.la" into the box below and hitting the submit button.</p>
@@ -31,21 +35,22 @@ other...............    -    -          | | | spoken........  100    -
     <p>Only the existing in-game "normal" languages are graphed. If/when any other languages are implemented I will add them to this script. As such Dwarven, Gnomish, Thieves Can't and Wizard Scrolls are ignored.</p>
     <p>Below is an example input:</p>
     <p class="dwquote">
-    <?php $this->placeholder('dwq')->captureStart('SET'); ?>
-    =======SKILLS=======Level/Bonus=========================================
-    other...............    -    -          | | | spoken........  100    -
-    | language..........    -    -          | | | written.......  100    -
-    | | uberwaldean.....    -    -          | | ephebian........    -    -
-    | | | spoken........   35    -          | | | spoken........   10    -
-    | | | written.......   25    -          | | | written.......   20    -
-    | | djelian.........    -    -          | | agatean.........    -    -
-    | | | spoken........   65    -          | | | spoken........   65    -
-    | | | written.......   40    -          | | | written.......   20    -
-    | | morporkian......    -    -
-    <?php $this->placeholder('dwq')->captureEnd(); ?>
-    <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+        @obstart('dwq')
+=======SKILLS=======Level/Bonus=========================================
+other...............    -    -          | | | spoken........  100    -
+| language..........    -    -          | | | written.......  100    -
+| | uberwaldean.....    -    -          | | ephebian........    -    -
+| | | spoken........   35    -          | | | spoken........   10    -
+| | | written.......   25    -          | | | written.......   20    -
+| | djelian.........    -    -          | | agatean.........    -    -
+| | | spoken........   65    -          | | | spoken........   65    -
+| | | written.......   40    -          | | | written.......   20    -
+| | morporkian......    -    -
+        @obend()
+        <?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
     </p>
     <form method="post" action="">
+        {{ csrf_field() }}
         <fieldset>
             <legend>Language Skills</legend>
             <p>Please paste into this box the output of "skills ot.la":</p>
@@ -54,5 +59,4 @@ other...............    -    -          | | | spoken........  100    -
         </fieldset>
     </form>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection

@@ -1,10 +1,13 @@
+@extends('layout.master')
+
+@section('content')
 <article>
-    <p>The following was originally posted by <a href="http://discworld.atuin.net/lpc/secure/finger.c?player=Gruntha">Gruntha</a> (not one of my alts) on the MUD boards <a href="http://discworld.atuin.net/lpc/secure/boards.c?board=frog&amp;type=read&amp;note=466045&amp;threaded=0">here</a>. I have mirrored it here as I find it both humourous and informative to some degree and board posts don't last forever.</p>
+    <p>The following was originally posted by <a href="http://discworld.atuin.net/lpc/secure/finger.c?player=Gruntha">Gruntha</a> (not one of my alts) on the MUD boards <a href="http://discworld.atuin.net/lpc/secure/boards.c?board=frog&amp;type=read&amp;note=466045&amp;threaded=0">here</a>. I have mirrored it here as I find it both humorous and informative to some degree and board posts don't last forever.</p>
 </article>
 
 <article>
 <p class="dwquote">
-<?php $this->placeholder('dwq')->captureStart('SET'); ?>
+@obstart('dwq')
 You jump off.
 You are falling off the tower of art [none].
 A tiny black moth flits into the area and flutters around you.
@@ -375,9 +378,7 @@ Archilus mourns you.
 Death says: DON'T MAKE THOSE PUPPY DOG EYES, IT WON'T DO YOU ANY GOOD.
 Gerby mourns you.
 Death says: I SUPPOSE YOU WANT TO BE ALLOWED TO STAY, DO YOU?
-<?php $this->placeholder('dwq')->captureEnd(); ?>
-<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br($this->placeholder('dwq'))) ?>
+@obend
+<?php echo str_replace("  ", "&nbsp;&nbsp;", nl2br(obget('dwq'))) ?>
 </p>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>

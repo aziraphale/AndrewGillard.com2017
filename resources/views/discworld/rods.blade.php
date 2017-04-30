@@ -1,3 +1,6 @@
+@extends('layout.master')
+
+@section('content')
 <article class="dwrods">
     <p>Mishal will make faith rods on request, either for Sek followers, or for priests or followers of other gods.</p>
 
@@ -90,5 +93,4 @@
         </tbody> */ ?>
     </table>
 </article>
-
-<?php echo $this->partial("last-mod-time.phtml", array("filename"=>__FILE__)) ?>
+@endsection
