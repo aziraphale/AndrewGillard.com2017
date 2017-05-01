@@ -13,7 +13,9 @@
 
 Route::get('/', 'BlogController@index');
 Route::get('/blog', 'BlogController@index');
-Route::get('/blog/{id}/{slug?}', 'BlogController@view');
+Route::get('/blog/{id}/{slug?}', 'BlogController@viewFromId')->where(['id'=>'[0-9]+', 'slug'=>'[a-z0-9\-]+']);
+Route::get('/blog/{year}/{month}/{slug}', 'BlogController@view')->where(['year'=>'[0-9]{4}', 'month'=>'[0-9]{2}', 'slug'=>'[a-z0-9\-]+']);
+Route::get('/blog/category/{category}', 'BlogController@category')->where(['category'=>'[a-z0-9\-]+']);
 //Route::get('/', 'AboutController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/cv', 'CvController@index');
@@ -30,7 +32,7 @@ Route::post('/discworld/language-graphs', 'DiscworldController@langgraphs');
 Route::get('/discworld/render-language-graph', 'DiscworldController@renderlanggraph');
 Route::get('/discworld/locations', 'DiscworldController@locations');
 Route::get('/discworld/logs', 'DiscworldController@logs');
-Route::get('/discworld/maps/{map?}', 'DiscworldController@maps');
+Route::get('/discworld/maps/{map?}', 'DiscworldController@maps')->where(['map'=>'[a-z0-9\-]+']);
 Route::get('/discworld/rods', 'DiscworldController@rods');
 Route::get('/discworld/status-bar-script', 'DiscworldController@sbscript');
 

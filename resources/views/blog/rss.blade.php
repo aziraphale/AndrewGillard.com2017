@@ -7,9 +7,9 @@
         @foreach ($posts as $post)
             <item>
                 <title>{{$post->title}}</title>
-                <link>{{action('BlogController@view', ['id'=>$post->id, 'slug'=>$post->slug])}}</link>
+                <link>{{action('BlogController@view', ['year'=>$post->year(), 'month'=>$post->month(), 'slug'=>$post->slug])}}</link>
                 <pubDate>{{$post->publication_date->format(\Carbon\Carbon::RSS)}}</pubDate>
-                <guid isPermaLink="true">{{action('BlogController@view', ['id'=>$post->id])}}</guid>
+                <guid>{{action('BlogController@view', ['id'=>$post->id])}}</guid>
                 <description><![CDATA[
                     {{preg_replace('#\[/?.+?\]#', '', strip_tags($entry->shortBody()))}}
                 ]]></description>

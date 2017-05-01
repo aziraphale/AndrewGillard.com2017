@@ -59,13 +59,13 @@
         <footer>
             <p>©2004-{{\Carbon\Carbon::now()->format('Y')}} Andrew Gillard</p>
 
-            <ul>
+            {{--<ul>
                 <li><a href="http://jigsaw.w3.org/css-validator/validator?uri={{url()->full()}}" title="Valid CSS!" class="sprite-footer-css"></a></li>
                 <li><a href="http://validator.w3.org/check?uri={{url()->full()}}" title="Valid HTML5!" class="sprite-footer-html5"></a></li>
                 <li><a href="http://www.php.net/" title="Powered by PHP" class="sprite-footer-php"></a></li>
                 <li><a href="http://www.mysql.com/" title="Powered by MySQL" class=sprite-footer-mysql></a></li>
                 <li><a href="{{action('BlogController@rss')}}" title="RSS Feed" class="sprite-footer-rss"></a></li>
-            </ul>
+            </ul>--}}
         </footer>
 
         <script type="text/javascript">

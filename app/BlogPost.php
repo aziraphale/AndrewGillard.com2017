@@ -2,13 +2,32 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Class BlogPost
+ *
+ * @package App
+ * @property int id
+ * @property Carbon publication_date
+ * @property string title
+ * @property string slug
+ * @property string body
+ * @property string format
+ * @property string[] categories
+ * @property string source
+ * @property bool draft
+ * @property Carbon created_at
+ * @property Carbon updated_at
+ * @property Carbon deleted_at
+ */
 class BlogPost extends Model {
 	use SoftDeletes;
 
     //protected $table = 'blog_posts'; // default
+
     /**
      * DB cols that should be considered dates
      *
@@ -26,9 +45,6 @@ class BlogPost extends Model {
         'id' => 'integer',
         'draft' => 'boolean',
     ];
-
-    // Categories [varchar255] Misc,Programming,Web Development,Technology,Linux,Windows,Android,Electronics,Life,Hackaday,YouTube,etc.
-    // Source [varchar128] Hackaday, YouTube, NULL, etc.
 
     public function getCategoriesAttribute($value)
     {
@@ -61,6 +77,16 @@ class BlogPost extends Model {
         return $out;
     }
 
+    public function year()
+    {
+        return $this->publication_date->format('Y');
+    }
+
+    public function month()
+    {
+        return $this->publication_date->format('m');
+    }
+
     public function setSlugAttribute($value)
     {
         $this->attributes['slug'] = strtolower($value);
@@ -84,10 +110,6 @@ class BlogPost extends Model {
             if (!in_array($v, $allowed, true)) {
                 throw new \UnexpectedValueException("Each comma-separated value for BlogPost::categories attribute must be one of: " . implode(', ', $allowed));
             }
-        }
-
-        if (!in_array($value, $allowed, true)) {
-
         }
     }
 
@@ -114,19 +136,41 @@ class BlogPost extends Model {
 
     public static function validCategoriesValues()
     {
+        return array_values(self::validCategoriesValuesAndSlugs());
+    }
+
+    public static function validCategoriesSlugs()
+    {
+        return array_keys(self::validCategoriesValuesAndSlugs());
+    }
+
+    public static function validCategoriesValuesAndSlugs()
+    {
         return [
-            'Misc',
-            'Programming',
-            'Web Development',
-            'Technology',
-            'Linux',
-            'Windows',
-            'Android',
-            'Electronics',
-            'Life',
-            'Hackaday',
-            'YouTube',
+            'ancient' => 'Ancient',
+            'misc' => 'Misc',
+            'programming' => 'Programming',
+            'web-development' => 'Web Development',
+            'technology' => 'Technology',
+            'linux' => 'Linux',
+            'windows' => 'Windows',
+            'android' => 'Android',
+            'electronics' => 'Electronics',
+            '3d-printing' => '3D Printing',
+            'life' => 'Life',
+            'hackaday' => 'Hackaday',
+            'youtube' => 'YouTube',
         ];
+    }
+
+    public static function categoryNameToSlug($name)
+    {
+        return array_search($name, self::validCategoriesValuesAndSlugs());
+    }
+
+    public static function categorySlugToName($slug)
+    {
+        return self::validCategoriesValuesAndSlugs()[$slug];
     }
 
     public static function validSourceValues()

@@ -5,16 +5,25 @@
 <article>
 <div class="blogpost">
     <h2>
-        <a href="{{action('BlogController@view', ['id'=>$post->id, 'slug'=>$post->slug])}}">
+        <a href="{{action('BlogController@view', ['year'=>$post->year(), 'month'=>$post->month(), 'slug'=>$post->slug])}}">
             {{$post->title}}
         </a>
     </h2>
-    <h3 class="blogsubheading">Posted at {{$post->publication_date->format('D, j M Y, H:i:s')}}</h3>
+    <h3 class="blogsubheading">
+        <span class="postdate"><span class="postdatetitle">Posted on</span> {{$post->publication_date->format('D, j M Y \a\t H:i:s')}}</span>
+
+        <span class="categories">
+            in
+            @foreach ($post->categories as $category)
+                <a href="{{action('BlogController@category', ['category'=>\App\BlogPost::categoryNameToSlug($category)])}}">{{$category}}</a>
+            @endforeach
+        </span>
+    </h3>
     <div class="blogpostcontent">
         @if ($post->isHtml())
             {!! $post->body !!}
         @elseif ($post->isMarkdown())
-
+            {!! Markdown::convertToHtml($post->body) !!}
         @else
             <div>{!! BBCode::parse($post->body) !!}</div>
         @endif

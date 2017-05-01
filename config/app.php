@@ -64,6 +64,7 @@ return [
     |
     */
 
+    //'timezone' => 'UTC',
     'timezone' => 'Europe/London',
 
     /*
@@ -179,6 +180,9 @@ return [
 
         Golonka\BBCode\BBCodeParserServiceProvider::class,
 
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        AltThree\Emoji\EmojiServiceProvider::class,
+
     ],
 
     /*
@@ -214,6 +218,7 @@ return [
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,

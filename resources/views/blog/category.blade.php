@@ -2,9 +2,11 @@
 
 @section('content')
 
+    <h2>Posts in ‘{{$categoryName}}’</h2>
+
 {{$posts->links()}}
 
-@each('blog.list-item', $posts, 'post', 'blog.list-empty');
+@each('blog.list-item', $posts, 'post', 'blog.list-empty')
 
 <script type="text/javascript">
 @if (env('APP_ENV') !== 'production')
