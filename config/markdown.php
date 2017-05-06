@@ -41,6 +41,7 @@ return [
 
     'extensions' => [
         AltThree\Emoji\EmojiExtension::class,
+        Webuni\CommonMark\TableExtension\TableExtension::class,
     ],
 
     /*

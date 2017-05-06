@@ -11,7 +11,8 @@
         "graham-campbell/markdown": "^7.1",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "webuni/commonmark-table-extension": "^0.6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
